@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>色彩</title>
+    <script type="text/javascript" src="js/chroma.js"></script>
+    <script type="text/javascript" src="js/clipboard.min.js"></script>
+    <link rel="prefetch">
+    <style type="text/css">
+    body{
+        padding: 20px;
+    }
+    .colorHex div{
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        height: 50px;
+        width: 75px;
+        display: inline-block;
+        color: rgba(0, 0, 0, 100);
+    }
+    #hcl_h{
+        width: 1000px;
+        height: 20px;
+    }
+    </style>
+</head>
+
+<body onload="changeHcl_h()">
+    <div>
+        <input type="range" id="hcl_h" min="0" max="360" oninput="changeHcl_h()" step="15">
+        <div id="value"></div>
+    </div>
+    <div class="colorHex">
+        <div id="L0" class="btn" data-clipboard-target="#T0"></div>
+        <div id="L1" class="btn" data-clipboard-target="#T1"></div>
+        <div id="L2" class="btn" data-clipboard-target="#T2"></div>
+        <div id="L3" class="btn" data-clipboard-target="#T3"></div>
+        <div id="L4" class="btn" data-clipboard-target="#T4"></div>
+        <div id="L5" class="btn" data-clipboard-target="#T5"></div>
+        <div id="L6" class="btn" data-clipboard-target="#T6"></div>
+        <div id="L7" class="btn" data-clipboard-target="#T7"></div>
+        <div id="L8" class="btn" data-clipboard-target="#T8"></div>
+        <div id="L9" class="btn" data-clipboard-target="#T9"></div>
+        <div id="L10" class="btn" data-clipboard-target="#T10"></div>
+        <div id="L11" class="btn" data-clipboard-target="#T11"></div>
+        <div id="L12" class="btn" data-clipboard-target="#T12"></div>
+    </div>
+    <div class="colorHex">
+        <div id="T0" class="btn" data-clipboard-target="#T0"></div>
+        <div id="T1" class="btn" data-clipboard-target="#T1"></div>
+        <div id="T2" class="btn" data-clipboard-target="#T2"></div>
+        <div id="T3" class="btn" data-clipboard-target="#T3"></div>
+        <div id="T4" class="btn" data-clipboard-target="#T4"></div>
+        <div id="T5" class="btn" data-clipboard-target="#T5"></div>
+        <div id="T6" class="btn" data-clipboard-target="#T6"></div>
+        <div id="T7" class="btn" data-clipboard-target="#T7"></div>
+        <div id="T8" class="btn" data-clipboard-target="#T8"></div>
+        <div id="T9" class="btn" data-clipboard-target="#T9"></div>
+        <div id="T10" class="btn" data-clipboard-target="#T10"></div>
+        <div id="T11" class="btn" data-clipboard-target="#T11"></div>
+        <div id="T12" class="btn" data-clipboard-target="#T12"></div>
+    </div>
+    <div class="colorHex">
+        <div id="L0_b" class="btn" data-clipboard-target="#T0_b"></div>
+        <div id="L1_b" class="btn" data-clipboard-target="#T1_b"></div>
+        <div id="L2_b" class="btn" data-clipboard-target="#T2_b"></div>
+        <div id="L3_b" class="btn" data-clipboard-target="#T3_b"></div>
+        <div id="L4_b" class="btn" data-clipboard-target="#T4_b"></div>
+        <div id="L5_b" class="btn" data-clipboard-target="#T5_b"></div>
+        <div id="L6_b" class="btn" data-clipboard-target="#T6_b"></div>
+        <div id="L7_b" class="btn" data-clipboard-target="#T7_b"></div>
+        <div id="L8_b" class="btn" data-clipboard-target="#T8_b"></div>
+        <div id="L9_b" class="btn" data-clipboard-target="#T9_b"></div>
+        <div id="L10_b" class="btn" data-clipboard-target="#T10_b"></div>
+        <div id="L11_b" class="btn" data-clipboard-target="#T11_b"></div>
+        <div id="L12_b" class="btn" data-clipboard-target="#T12_b"></div>
+    </div>
+    <div class="colorHex">
+        <div id="T0_b" class="btn" data-clipboard-target="#T0_b"></div>
+        <div id="T1_b" class="btn" data-clipboard-target="#T1_b"></div>
+        <div id="T2_b" class="btn" data-clipboard-target="#T2_b"></div>
+        <div id="T3_b" class="btn" data-clipboard-target="#T3_b"></div>
+        <div id="T4_b" class="btn" data-clipboard-target="#T4_b"></div>
+        <div id="T5_b" class="btn" data-clipboard-target="#T5_b"></div>
+        <div id="T6_b" class="btn" data-clipboard-target="#T6_b"></div>
+        <div id="T7_b" class="btn" data-clipboard-target="#T7_b"></div>
+        <div id="T8_b" class="btn" data-clipboard-target="#T8_b"></div>
+        <div id="T9_b" class="btn" data-clipboard-target="#T9_b"></div>
+        <div id="T10_b" class="btn" data-clipboard-target="#T10_b"></div>
+        <div id="T11_b" class="btn" data-clipboard-target="#T11_b"></div>
+        <div id="T12_b" class="btn" data-clipboard-target="#T12_b"></div>
+    </div>
+    <div class="colorHex">
+        <div id="L0_g" class="btn" data-clipboard-target="#T0_g"></div>
+        <div id="L1_g" class="btn" data-clipboard-target="#T1_g"></div>
+        <div id="L2_g" class="btn" data-clipboard-target="#T2_g"></div>
+        <div id="L3_g" class="btn" data-clipboard-target="#T3_g"></div>
+        <div id="L4_g" class="btn" data-clipboard-target="#T4_g"></div>
+        <div id="L5_g" class="btn" data-clipboard-target="#T5_g"></div>
+        <div id="L6_g" class="btn" data-clipboard-target="#T6_g"></div>
+        <div id="L7_g" class="btn" data-clipboard-target="#T7_g"></div>
+        <div id="L8_g" class="btn" data-clipboard-target="#T8_g"></div>
+        <div id="L9_g" class="btn" data-clipboard-target="#T9_g"></div>
+        <div id="L10_g" class="btn" data-clipboard-target="#T10_g"></div>
+        <div id="L11_g" class="btn" data-clipboard-target="#T11_g"></div>
+        <div id="L12_g" class="btn" data-clipboard-target="#T12_g"></div>
+    </div>
+    <div class="colorHex">
+        <div id="T0_g" class="btn" data-clipboard-target="#T0_g"></div>
+        <div id="T1_g" class="btn" data-clipboard-target="#T1_g"></div>
+        <div id="T2_g" class="btn" data-clipboard-target="#T2_g"></div>
+        <div id="T3_g" class="btn" data-clipboard-target="#T3_g"></div>
+        <div id="T4_g" class="btn" data-clipboard-target="#T4_g"></div>
+        <div id="T5_g" class="btn" data-clipboard-target="#T5_g"></div>
+        <div id="T6_g" class="btn" data-clipboard-target="#T6_g"></div>
+        <div id="T7_g" class="btn" data-clipboard-target="#T7_g"></div>
+        <div id="T8_g" class="btn" data-clipboard-target="#T8_g"></div>
+        <div id="T9_g" class="btn" data-clipboard-target="#T9_g"></div>
+        <div id="T10_g" class="btn" data-clipboard-target="#T10_g"></div>
+        <div id="T11_g" class="btn" data-clipboard-target="#T11_g"></div>
+        <div id="T12_g" class="btn" data-clipboard-target="#T12_g"></div>
+    </div>
+    <div class="colorHex">
+        <div id="L0_b_g" class="btn" data-clipboard-target="#T0_b_g"></div>
+        <div id="L1_b_g" class="btn" data-clipboard-target="#T1_b_g"></div>
+        <div id="L2_b_g" class="btn" data-clipboard-target="#T2_b_g"></div>
+        <div id="L3_b_g" class="btn" data-clipboard-target="#T3_b_g"></div>
+        <div id="L4_b_g" class="btn" data-clipboard-target="#T4_b_g"></div>
+        <div id="L5_b_g" class="btn" data-clipboard-target="#T5_b_g"></div>
+        <div id="L6_b_g" class="btn" data-clipboard-target="#T6_b_g"></div>
+        <div id="L7_b_g" class="btn" data-clipboard-target="#T7_b_g"></div>
+        <div id="L8_b_g" class="btn" data-clipboard-target="#T8_b_g"></div>
+        <div id="L9_b_g" class="btn" data-clipboard-target="#T9_b_g"></div>
+        <div id="L10_b_g" class="btn" data-clipboard-target="#T10_b_g"></div>
+        <div id="L11_b_g" class="btn" data-clipboard-target="#T11_b_g"></div>
+        <div id="L12_b_g" class="btn" data-clipboard-target="#T12_b_g"></div>
+    </div>
+    <div class="colorHex">
+        <div id="T0_b_g" class="btn" data-clipboard-target="#T0_b_g"></div>
+        <div id="T1_b_g" class="btn" data-clipboard-target="#T1_b_g"></div>
+        <div id="T2_b_g" class="btn" data-clipboard-target="#T2_b_g"></div>
+        <div id="T3_b_g" class="btn" data-clipboard-target="#T3_b_g"></div>
+        <div id="T4_b_g" class="btn" data-clipboard-target="#T4_b_g"></div>
+        <div id="T5_b_g" class="btn" data-clipboard-target="#T5_b_g"></div>
+        <div id="T6_b_g" class="btn" data-clipboard-target="#T6_b_g"></div>
+        <div id="T7_b_g" class="btn" data-clipboard-target="#T7_b_g"></div>
+        <div id="T8_b_g" class="btn" data-clipboard-target="#T8_b_g"></div>
+        <div id="T9_b_g" class="btn" data-clipboard-target="#T9_b_g"></div>
+        <div id="T10_b_g" class="btn" data-clipboard-target="#T10_b_g"></div>
+        <div id="T11_b_g" class="btn" data-clipboard-target="#T11_b_g"></div>
+        <div id="T12_b_g" class="btn" data-clipboard-target="#T12_b_g"></div>
+    </div>
+<script type="text/javascript">
+    var clipboard = new ClipboardJS('.btn');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+
+    function changeHcl_h(){
+        var h = document.getElementById("hcl_h").value;
+        var c = new Array(6,6,10,10,20,0,0,0,0,100,100,100,20);
+        var l = new Array(99,98,97,96,93,86,80,73,67,60,48,40,12);
+        var c_g = new Array(0.5,0.5,1,1,2,2,3,3,4,5,5,4,2);
+        document.getElementById("value").innerHTML="Hue: "+h;
+        for(var i=0;i<13;i++){
+            while(chroma.hcl(h,c[i],l[i]).clipped()){
+                c[i]--;
+            }
+            unitT = document.getElementById("T"+i);
+            unitT.innerHTML=chroma.hcl(h,c[i],l[i]);
+            unit = document.getElementById("L"+i);
+            unit.style.backgroundColor=chroma.hcl(h,c[i],l[i]);
+
+            unitT = document.getElementById("T"+i+"_g");
+            unitT.innerHTML=chroma.hcl(h,c_g[i],l[i]);
+            unit = document.getElementById("L"+i+"_g");
+            unit.style.backgroundColor=chroma.hcl(h,c_g[i],l[i]);
+        }
+        hexcache = chroma.bezier([chroma.hcl(h,c[4],l[4]), chroma.hcl(h,c[9],l[9])]).scale().colors(6);
+        for(var i=5;i<9;i++){
+            unitT = document.getElementById("T"+i);
+            unitT.innerHTML=hexcache[i-4];
+            unit = document.getElementById("L"+i);
+            unit.style.backgroundColor=hexcache[i-4];
+        }
+
+        var c_b = new Array(6,6,10,10,20,0,0,0,0,100,100,100,20);
+        var l_b = new Array(3,6,9,12,18,26,35,43,52,60,68,75,96);
+        for(var i=0;i<13;i++){
+            while(chroma.hcl(h,c_b[i],l_b[i]).clipped()){
+                c_b[i]--;
+            }
+            unitT = document.getElementById("T"+i+"_b");
+            unitT.innerHTML=chroma.hcl(h,c_b[i],l_b[i]);
+            unit = document.getElementById("L"+i+"_b");
+            unit.style.backgroundColor=chroma.hcl(h,c_b[i],l_b[i]);
+
+            unitT = document.getElementById("T"+i+"_b_g");
+            unitT.innerHTML=chroma.hcl(h,c_g[i],l_b[i]);
+            unit = document.getElementById("L"+i+"_b_g");
+            unit.style.backgroundColor=chroma.hcl(h,c_g[i],l_b[i]);
+        }
+
+        hexcache = chroma.bezier([chroma.hcl(h,c_b[4],l_b[4]), chroma.hcl(h,c_b[9],l_b[9])]).scale().colors(6);
+        for(var i=5;i<9;i++){
+            unitT = document.getElementById("T"+i+"_b");
+            unitT.innerHTML=hexcache[i-4];
+            unit = document.getElementById("L"+i+"_b");
+            unit.style.backgroundColor=hexcache[i-4];
+        }
+
+    }
+</script>
+</body>
+</html>
