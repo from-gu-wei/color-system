@@ -163,7 +163,7 @@
         var h = document.getElementById("hcl_h").value;
         var c = new Array(6,6,10,10,20,0,0,0,0,100,100,100,20);
         var l = new Array(99,98,97,96,93,86,80,73,67,60,48,40,12);
-        var c_g = new Array(0.5,0.5,1,1,2,2,3,3,4,5,5,4,2);
+        var c_g = new Array(0.5,0.5,1,1,1,1,1,2,2,3,3,3,1);
         document.getElementById("value").innerHTML="Hue: "+h;
         for(var i=0;i<13;i++){
             while(chroma.hcl(h,c[i],l[i]).clipped()){
