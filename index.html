@@ -19,7 +19,7 @@
         color: rgba(0, 0, 0, 100);
     }
     #hcl_h{
-        width: 860px;
+        width: 780px;
         height: 20px;
     }
     </style>
@@ -41,8 +41,6 @@
         <div id="L7" class="btn" data-clipboard-target="#T7"></div>
         <div id="L8" class="btn" data-clipboard-target="#T8"></div>
         <div id="L9" class="btn" data-clipboard-target="#T9"></div>
-        <div id="L10" class="btn" data-clipboard-target="#T10"></div>
-        <div id="L11" class="btn" data-clipboard-target="#T11"></div>
     </div>
     <div class="colorHex">
         <div id="T0" class="btn" data-clipboard-target="#T0"></div>
@@ -55,7 +53,6 @@
         <div id="T7" class="btn" data-clipboard-target="#T7"></div>
         <div id="T8" class="btn" data-clipboard-target="#T8"></div>
         <div id="T9" class="btn" data-clipboard-target="#T9"></div>
-        <div id="T10" class="btn" data-clipboard-target="#T10"></div>
     </div>
     <div class="colorHex">
         <div id="L0_g" class="btn" data-clipboard-target="#T0_g"></div>
@@ -68,7 +65,6 @@
         <div id="L7_g" class="btn" data-clipboard-target="#T7_g"></div>
         <div id="L8_g" class="btn" data-clipboard-target="#T8_g"></div>
         <div id="L9_g" class="btn" data-clipboard-target="#T9_g"></div>
-        <div id="L10_g" class="btn" data-clipboard-target="#T10_g"></div>
     </div>
     <div class="colorHex">
         <div id="T0_g" class="btn" data-clipboard-target="#T0_g"></div>
@@ -81,7 +77,6 @@
         <div id="T7_g" class="btn" data-clipboard-target="#T7_g"></div>
         <div id="T8_g" class="btn" data-clipboard-target="#T8_g"></div>
         <div id="T9_g" class="btn" data-clipboard-target="#T9_g"></div>
-        <div id="T10_g" class="btn" data-clipboard-target="#T10_g"></div>
     </div>
     <div class="colorHex">
         <div id="L0_b" class="btn" data-clipboard-target="#T0_b"></div>
@@ -94,7 +89,6 @@
         <div id="L7_b" class="btn" data-clipboard-target="#T7_b"></div>
         <div id="L8_b" class="btn" data-clipboard-target="#T8_b"></div>
         <div id="L9_b" class="btn" data-clipboard-target="#T9_b"></div>
-        <div id="L10_b" class="btn" data-clipboard-target="#T10_b"></div>
     </div>
     <div class="colorHex">
         <div id="T0_b" class="btn" data-clipboard-target="#T0_b"></div>
@@ -107,7 +101,6 @@
         <div id="T7_b" class="btn" data-clipboard-target="#T7_b"></div>
         <div id="T8_b" class="btn" data-clipboard-target="#T8_b"></div>
         <div id="T9_b" class="btn" data-clipboard-target="#T9_b"></div>
-        <div id="T10_b" class="btn" data-clipboard-target="#T10_b"></div>
     </div>
     <div class="colorHex">
         <div id="L0_b_g" class="btn" data-clipboard-target="#T0_b_g"></div>
@@ -120,7 +113,6 @@
         <div id="L7_b_g" class="btn" data-clipboard-target="#T7_b_g"></div>
         <div id="L8_b_g" class="btn" data-clipboard-target="#T8_b_g"></div>
         <div id="L9_b_g" class="btn" data-clipboard-target="#T9_b_g"></div>
-        <div id="L10_b_g" class="btn" data-clipboard-target="#T10_b_g"></div>
     </div>
     <div class="colorHex">
         <div id="T0_b_g" class="btn" data-clipboard-target="#T0_b_g"></div>
@@ -133,7 +125,6 @@
         <div id="T7_b_g" class="btn" data-clipboard-target="#T7_b_g"></div>
         <div id="T8_b_g" class="btn" data-clipboard-target="#T8_b_g"></div>
         <div id="T9_b_g" class="btn" data-clipboard-target="#T9_b_g"></div>
-        <div id="T10_b_g" class="btn" data-clipboard-target="#T10_b_g"></div>
     </div>
 <script type="text/javascript">
     var clipboard = new ClipboardJS('.btn');
@@ -146,11 +137,11 @@
 
     function changeHcl_h(){
         var h = document.getElementById("hcl_h").value;
-        var c = new Array(6,8,12,20,0,0,0,100,100,100,30);
-        var l = new Array(99,97,95,93,84,75,66,58,47,42,12);
-        var c_g = new Array(0.5,0.5,1,1,1,2,2,3,3,3,1);
+        var c = new Array(6,8,12,20,0,0,0,100,100,30);
+        var l = new Array(99,97,95,93,83,73,64,54,42,12);
+        var c_g = new Array(0.5,0.5,1,1,1,2,2,3,3,1);
         document.getElementById("value").innerHTML="Hue: "+h;
-        for(var i=0;i<11;i++){
+        for(var i=0;i<10;i++){
             while(chroma.hcl(h,c[i],l[i]).clipped()){
                 c[i]--;
             }
@@ -172,9 +163,9 @@
             unit.style.backgroundColor=hexcache[i-3];
         }
 
-        var c_b = new Array(6,8,12,20,0,0,0,100,100,100,30);
-        var l_b = new Array(3,8,13,18,28,38,48,58,68,75,96);
-        for(var i=0;i<11;i++){
+        var c_b = new Array(6,8,12,20,0,0,0,100,100,30);
+        var l_b = new Array(3,8,13,18,27,36,45,54,75,96);
+        for(var i=0;i<10;i++){
             while(chroma.hcl(h,c_b[i],l_b[i]).clipped()){
                 c_b[i]--;
             }
