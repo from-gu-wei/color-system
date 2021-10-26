@@ -137,7 +137,7 @@
 
     function changeHcl_h(){
         var h = document.getElementById("hcl_h").value;
-        var c = new Array(6,8,12,20,0,0,0,100,100,30);
+        var c = new Array(4,6,8,20,0,0,0,100,100,30);
         var l = new Array(99,97,95,93,83,73,64,54,42,12);
         var c_g = new Array(0.5,0.5,1,1,1,2,2,3,3,1);
         document.getElementById("value").innerHTML="Hue: "+h;
@@ -163,7 +163,7 @@
             unit.style.backgroundColor=hexcache[i-3];
         }
 
-        var c_b = new Array(6,8,12,20,0,0,0,100,100,30);
+        var c_b = new Array(4,6,8,20,0,0,0,100,100,30);
         var l_b = new Array(3,8,13,18,27,36,45,54,75,96);
         for(var i=0;i<10;i++){
             while(chroma.hcl(h,c_b[i],l_b[i]).clipped()){
