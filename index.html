@@ -31,13 +31,26 @@
             width: 780px;
             height: 20px;
         }
+
+        #hcl_c {
+            width: 780px;
+            height: 20px;
+        }
+
+        .input {
+            height: 80px;
+        }
     </style>
 </head>
 
 <body onload="changeHcl_h()">
-    <div>
+    <div class="input">
         <input type="range" id="hcl_h" min="0" max="360" oninput="changeHcl_h()" step="1" value="180">
-        <div id="value"></div>
+        <div id="value_h"></div>
+    </div>
+    <div class="input">
+        <input type="range" id="hcl_c" min="0" max="100" oninput="changeHcl_h()" step="1" value="100">
+        <div id="value_c"></div>
     </div>
     <div id="light" class="colorHex">
         <div id="L0" class="btn" data-clipboard-target="#T0"></div>
@@ -194,7 +207,9 @@
 
         function changeHcl_h() {
             var h = document.getElementById("hcl_h").value;
-            document.getElementById("value").innerHTML = "Hue: " + h;
+            document.getElementById("value_h").innerHTML = "Hue: " + h;
+            var c_percent = document.getElementById("hcl_c").value;
+            document.getElementById("value_c").innerHTML = "Chroma: " + c_percent + "%";
             var c = new Array(
                 new Array(4, 6, 8, 10, 0, 0, 0, 100, 80, 20),
                 new Array(4, 6, 8, 10, 0, 0, 0, 100, 80, 20),
@@ -223,6 +238,10 @@
                 while (chroma.hcl(h, c[1][i], l[1][i]).clipped()) {
                     c[1][i]--;
                 }
+                c[0][i] = Math.round(c[0][i] * c_percent / 100);
+                c[1][i] = Math.round(c[1][i] * c_percent / 100);
+                c[2][i] = Math.round(c[2][i] * c_percent / 100);
+                c[3][i] = Math.round(c[3][i] * c_percent / 100);
             }
             // 找到可用的饱和度
 
